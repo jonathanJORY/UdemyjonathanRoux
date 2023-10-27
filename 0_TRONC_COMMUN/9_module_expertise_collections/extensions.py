@@ -24,7 +24,7 @@ definition_extensions = (("doc", "Document Word"),
                         "exe": "Executable",
                         "txt": "Document Texte",
                         "jpeg": "Image JPEG"}"""
-
+# Version 1
 for fichier in fichiers:
     ext = extraire_extension(fichier)
     if ext:
@@ -36,23 +36,15 @@ for fichier in fichiers:
         definition = "Aucune extension"
     print(fichier + " (" + definition + ")")
 
-'''
-notepad.exe (Executable)
-mon.fichier.perso.doc (Document Word)
-notes.TXT (Document Texte)
-vacances.jpeg (Image JPEG)
-planning (Aucune extension)
-data.dat (Extension non connue)
-'''
-
-# lower/upper 
-# in / index / for
-# split
-# -1
-
-# extraire extension
-
-
-
-# faire la correspondance définition
+# Version 2
+for fic in fichiers:
+    if "." in fic:
+        extension = fic.split(".")[-1]
+        if extension.lower() not in [ext.lower() for ext, nom in definition_extensions]:
+            print(f"{fic} (Extension inconnue)")
+        for ext, nom in definition_extensions:
+            if ext.lower() == extension.lower():
+                print(f"{fic} ({nom})")
+    else:
+        print(f"{fic} (Aucune extension)")
 
