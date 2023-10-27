@@ -59,6 +59,7 @@ def poser_question(question):
 
     :param question: Le paramètre « question » est une liste qui contient les éléments suivants :
     """
+    res = False
     print("QUESTION")
     print("  " + question[0])
     for i in range(len(question[1])):
@@ -67,12 +68,12 @@ def poser_question(question):
     int_reponse = recurcive_demande_reponse(1, len(question[1]))
     if question[1][int_reponse-1].lower() == question[2].lower():
         print("Bonne réponse")
-        global SCORE
-        SCORE += 1
+        res = True
     else:
         print("Mauvaise réponse")
 
     print()
+    return res
 
 def lancer_questionnaire(questionnaire):
     """
@@ -83,11 +84,12 @@ def lancer_questionnaire(questionnaire):
     :param questionnaire: Le paramètre « questionnaire » est une liste qui contient des questions
     sous forme de listes.
     """
+    score = 0
     for question in questionnaire:
-        poser_question(question)
-    print("SCORE final :", SCORE)
+        if poser_question(question):
+            score += 1
+    print("SCORE final :", score)
 
-SCORE = 0
 
 questionnaire= (("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes"),
              "Paris"),
