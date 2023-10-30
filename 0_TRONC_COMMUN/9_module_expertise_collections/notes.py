@@ -15,7 +15,8 @@ noms.insert(1, "Toto")
 noms.append(noms_supplementaires)  # ["Jean", "Sophie", "Martin", ["Christophe", "Zoe"]]
 
 # Utilisation de extend (ou +=) pour ajouter tous les éléments d'une autre liste
-noms.extend(noms_supplementaires)
+b = noms.extend(noms_supplementaires)
+# print(b) = None
 
 # ---- SLICING ----
 
@@ -67,3 +68,23 @@ print(noms_join)
 print(noms_reconstruits)
 print(longeur_noms)
 print(longeur_noms_condition)
+
+
+pizzas_nom = ("4 fromages", "Calzone", "Hawai")
+pizzas_prix = (5.6, 5.7, 4.5)
+
+# ---- ZIP ET UNZIP ----
+
+# Utilisation de la fonction zip pour regrouper les tuples
+objet_zip = zip(pizzas_nom, pizzas_prix)
+list_zip = list(objet_zip)
+print("Liste zip :", list_zip)
+
+# Utilisation de la fonction zip pour décompresser les tuples
+objet_unzip = zip(*list_zip)
+list_unzip = list(objet_unzip)
+print("Liste décompressée :", list_unzip)
+
+#Supprimmer les doublons:
+test = ['bob', 'pol','bob','lola']
+test = list(set(test))

@@ -12,28 +12,19 @@ class Personne:
     def SePresenter(self):
         # Bonjour, je m'appelle Jean, j'ai 30 ans
         # Je suis majeur
-        if self.genre:
-            print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
-            print("Genre : Masculin")
-            if self.EstMajeur():
-                print("Je suis majeur")
-            else:
-                print("Je suis mineur")
-            print()
-        else:
-            print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
-            print("Genre : Feminin")
-            if self.EstMajeur():
-                print("Je suis majeure")
-            else:
-                print("Je suis mineure")
-            print()
+        # Affiche le message de présentation de la personne
+        e_optionnel = "" if self.genre else "e"
+        genre_str = "Masculin" if self.genre else "Féminin"
+        majeur_str = "majeur" if self.EstMajeur() else "mineur"
+        print(f"Bonjour, je m'appelle {self.nom}, j'ai {self.age} ans")
+        print(f"Genre : {genre_str + e_optionnel}")
+        print(f"Je suis {majeur_str + e_optionnel}\n")
 
     def EstMajeur(self):
         return self.age >= 18
 
-personne1 = Personne("Jean", 25)
+personne1 = Personne("Jean", 25, True)
 personne1.SePresenter()
 
-personne2 = Personne("Emilie", 17)
+personne2 = Personne("Emilie", 17, False)
 personne2.SePresenter()

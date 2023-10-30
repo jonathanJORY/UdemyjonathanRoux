@@ -1,33 +1,32 @@
-###
-# VOS PREMIERS PAS EN POO (PROGRAMMATION ORIENTÉE OBJET)
-###
-# - Différence programmation impérative / objet
-# - Le plus simple possible
-# - Exercices, mises en situation
+class Personne:
+    def __init__(self, nom: str="", age: int=0):
+        self.nom = nom
+        self.age = age
+        if nom == "":
+            self.demander_nom()
+        if age == 0:
+            self.demander_age()
 
-# Personne  (entité -> class)
-#    Données : nom, age
-#    Actions :  (méthodes)
-#       - SePresenter()
-#       - DemanderNom() / input
-#  [Personne "Jean"]     [Personne "Paul"]
+    def __str__(self):
+        return self.nom + " agé de : "+str(self.age)+" ans."
+    
+    def afficher_infos(self):
+        print(""+self.nom + " agé de : "+str(self.age)+" ans, je suis ") 
+        if self.est_majeur():
+            print("majeur" )
+        else: 
+            print("mineur")
 
-def afficher_informations_personne(nom, age):
-    print(f"La personne s'appelle {nom}, son age est {age} ans")
+    def demander_age(self):
+        self.age = input(f"Bonjour {self.nom} quel est votre age ? ")
 
-def demanger_nom_personne():
-    nom = input("Quel est votre nom ?")
-    return nom
+    def demander_nom(self):
+        self.nom = input(f"Bonjour quel est votre nom ? ")
 
-nom1 = "Jean"
-age1 = 30
+    def est_majeur(self):
+        return self.age >=18
 
-nom2 = "Paul"
-age2 = 25
 
-afficher_informations_personne(nom1, age1)
-afficher_informations_personne(nom2, age2)
-
-nom3 = demanger_nom_personne()
-age3 = 18
-afficher_informations_personne(nom3, age3)
+bob = Personne("bb",5)
+bob.afficher_infos()
+print(bob)
