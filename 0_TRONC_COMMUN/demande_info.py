@@ -87,7 +87,7 @@ def demander_taille(nom):
 NB_PERSONNES = 1
 
 for i in range(0, NB_PERSONNES):
-    print("Personne n°"+i)
+    print("Personne n°",i)
     nom_entrer = demander_nom()
     age_entrer = demander_age(nom_entrer)
     taille_entrer = demander_taille(nom_entrer)
