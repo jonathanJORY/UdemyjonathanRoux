@@ -1,3 +1,4 @@
+"""Fichier de notes diverses"""
 # ---- COLLECTIONS : LISTES / TUPLES ----
 
 noms = ["Jean", "Sophie", "Martin"]
@@ -118,16 +119,24 @@ print(a)
 
 
 a = 5
- 
+
 def ma_fonction():
-  global a
-  a = a + 1
-  print(a)
- 
+    global a
+    a = a + 1
+    print(a)
+
 ma_fonction()
 ma_fonction()
 # renvoie 6 puis 7
 
 nom = "Jean"
 print(nom[::-1])
+
+# ou
+
+r = ""
+for c in nom:
+    r = c + r
+
+print(r)
 #renvoie naeJ

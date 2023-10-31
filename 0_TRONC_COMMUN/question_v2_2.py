@@ -3,7 +3,7 @@
 Exercice : création d'un QCM
 """
 # score = 0
- 
+
 questionnaire1 = [
     {
         "titre": "L'art de cultiver des bonsaïs est originaire de ?",
@@ -49,20 +49,20 @@ def derouler_questionnaire(questionnaire):
 
 def quitter():  # création d'une fonction pour quitter le jeu
     quitt = ""
- 
+
     while quitt != "o":
         quitt = input("Etes-vous sûr de vouloir quitter le jeu ? o/n ")
- 
+
         if quitt == "o":
             print("Au revoir")
         elif quitt == "n":
             jeu_lancer()
         break
- 
- 
+
+
 def jeu_lancer():
     choix = ""
- 
+
     while choix != "o":
         global score
         choix = input("Are you ready ? o/n ")
@@ -76,11 +76,11 @@ def jeu_lancer():
             break
         else:
             print("Veuillez répondre par o ou n !")
- 
- 
+
+
 def re_jouer():
     jouer = ""
- 
+
     while jouer != "o":
         jouer = input("Voulez-vous re-jouer ? o/n ")
         print("")
@@ -89,12 +89,12 @@ def re_jouer():
         elif jouer == "n":
             print("Merci d'avoir joué ... A bientôt ")
             break
- 
- 
+
+
 print("")
 print("Bienvenue dans ce jeu de questions à choix multiple.")
 print()
- 
+
 jeu_lancer()
 print("")
 

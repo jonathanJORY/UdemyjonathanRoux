@@ -15,7 +15,7 @@ def afficher_table(nombre, operateur_str):
         "x": lambda a, b: a * b,
         "+": lambda a, b: a + b,
         "-": lambda a, b: a - b,
-        "^": lambda a, b: pow(a, b)
+        "^": lambda a, b: a**b #pow(a, b)
     }
 
     operation_cbk = operations.get(operateur_str)
@@ -35,8 +35,10 @@ print()
 afficher_table(2, "+")
 print()
 afficher_table(2, "g")
+print()
+afficher_table(2, "^")
 
-def somme(titre, *nombres, **matieres): 
+def somme(titre, *nombres): #, **matieres):
     # *nombres = un tuple de taille 0,n
     # **matieres = un dictionnaires de taille 0,n
     """

@@ -1,12 +1,15 @@
-#          EtreVivant            ## Classe parent
-#      Chat         Personne     ## Classes enfant (classes dérivées)
+"""          EtreVivant            ## Classe parent
+             Chat         Personne     ## Classes enfant (classes dérivées)
+"""
 class EtreVivant:
+    """Classe Parent pour espece"""
     ESPECE_ETRE_VIVANT = "(être vivant non identifié)"
 
     def afficher_espece(self):
         print("Info être vivant : " + self.ESPECE_ETRE_VIVANT)
 
 class Chat(EtreVivant):
+    """Herite d'etre vivant"""
     ESPECE_ETRE_VIVANT = "Chat (Mammifère félin)"
     def __init__(self, nom_facultatif="inconnu"):
         self.nom = nom_facultatif
@@ -16,7 +19,9 @@ class Chat(EtreVivant):
 
 
 class Personne(EtreVivant):
-    ESPECE_ETRE_VIVANT = "Humain (Mammifère Homo sapiens)"   # variable de classe (1 pour toutes les Personnes)
+    """herite d'etre vivant"""
+    ESPECE_ETRE_VIVANT = "Humain (Mammifère Homo sapiens)"
+    # variable de classe (1 pour toutes les Personnes)
 
     def __init__(self, nom: str="", age: int=0, genre: bool=True):
         self.nom = nom
@@ -29,7 +34,7 @@ class Personne(EtreVivant):
 
     def __str__(self):
         return self.nom + " agé de : "+str(self.age)+" ans."
-    
+
     def afficher_infos(self):
         e_optionnel = "" if self.genre else "e"
         genre_str = "Masculin" if self.genre else "Féminin"
@@ -42,14 +47,15 @@ class Personne(EtreVivant):
         self.age = input(f"Bonjour {self.nom} quel est votre age ? ")
 
     def demander_nom(self):
-        self.nom = input(f"Bonjour quel est votre nom ? ")
+        self.nom = input("Bonjour quel est votre nom ? ")
 
     def est_majeur(self):
         return self.age >=18
-    
+
 
 
 class Etudiant(Personne):
+    """Herite de Personne qui herite d'etre vivant"""
     def __init__(self, nom: str, age: int, etudes: str):
         # self.nom = nom   # crée une variable d'instance : nom
         # self.age = age
@@ -61,7 +67,7 @@ class Etudiant(Personne):
         print("Je suis etudiant en " + self.etudes)
 
 # --- UTILISATION ---
-liste_personnes = [Personne("Jean", 30), 
+liste_personnes = [Personne("Jean", 30),
                    Personne("Paul", 15),
                    Personne("Zoe", 20)]
 

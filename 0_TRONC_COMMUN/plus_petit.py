@@ -1,4 +1,4 @@
-# LISTES - ALGO : VALEUR LA PLUS PETITE
+""" LISTES - ALGO : VALEUR LA PLUS PETITE """
 
 
 nom_chauffeur =       ["Patrick", "Paul", "Marc", "Jean", "Pierre", "Marie", "Maxime"]

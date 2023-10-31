@@ -19,8 +19,6 @@
 #    - lancer()
 #
 
-    
-
 class Question:
     num_question = 0
     def from_data(data):
@@ -46,7 +44,6 @@ class Question:
         return Question.demander_reponse_numerique_utlisateur(min, max)
 
     def poser_question(self):
-        choix = self
         print("QUESTION")
         print("  " + self.titre)
         for i in range(len(self.choix)):
@@ -60,7 +57,7 @@ class Question:
             resultat_response_correcte = True
         else:
             print("Mauvaise réponse")
-            
+
         print()
         return resultat_response_correcte
 
@@ -77,17 +74,17 @@ class Questionnaire:
         print("Score final :", self.score, "sur", len(self.questions))
 
 
-# q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
-# q1.poser()
+data = (("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris",
+        "Quelle est la capitale de la France ?")
 
-data = (("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris", "Quelle est la capitale de la France ?")
-# q = 
-# print(q.__dict__)
 
 questionnaire1 = Questionnaire("test",(
-    Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
-    Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
-    Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles"),
+    Question("Quelle est la capitale de la France ?",
+             ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"),
+    Question("Quelle est la capitale de l'Italie ?",
+             ("Rome", "Venise", "Pise", "Florence"), "Rome"),
+    Question("Quelle est la capitale de la Belgique ?",
+             ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles"),
     Question.from_data(data)
             ),
         )

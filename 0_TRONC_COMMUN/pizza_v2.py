@@ -1,19 +1,19 @@
+"""Pizza en POO"""
 class Pizza:
-
+    """Classe de pizza personalisée"""
     def __init__(self, nom: str, prix: float, ingredients: list, vegetarienne: bool=False):
         self.nom = nom
         self.prix = prix
         self.ingredients = ingredients
         self.vegetarienne = vegetarienne
 
-
     def __str__(self):
         return "La pizza: "+self.nom + " est au prix de: "+ str(self.prix) +" €\nLa liste des ingrédients: "+ ", ".join(self.ingredients) + " \n" + ("--VEGETARIENNE--\n" if self.vegetarienne else "--NON VEGETARIENNE--\n")
-    
-    #def afficher()
+
 
 
 class PizzaPersonalise(Pizza):
+    """Classe de pizza personalisée"""
     PRIX_DE_BASE = 7
     PRIX_PAR_INGREDIENT = 1.2
     index_pizza_perso = 0
@@ -30,12 +30,12 @@ class PizzaPersonalise(Pizza):
 
     def demander_ingredient(self):
         print("\n---")
-        ingredient = input(f"Ajouter un ingrédient à votre {self.nom} n° {self.numero}(ou taper sur ENTRER pour finir): ")
+        ingredient = input(f"Ajouter un ingrédient à votre {self.nom} n°{self.numero}(ou taper sur ENTRER pour finir): ")
         if ingredient != "":
             self.ingredients.append(ingredient)
             print(f"Vous avez {len(self.ingredients)} ingrédient(s): {', '.join(self.ingredients)}")
             self.demander_ingredient()
-        return
+
 
 pizzas = [
     Pizza("4 fromages", 8.5, ("brie", "emmental", "compté", "parmesan"), True),
