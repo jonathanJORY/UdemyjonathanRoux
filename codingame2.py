@@ -41,3 +41,22 @@ print(maximum_guesses)
 puis utilise la stratégie optimale pour calculer le nombre maximum de suppositions 
 nécessaires pour deviner le nombre caché. La fonction bit_length() est utilisée pour calculer 
 le logarithme en base 2 de la longueur de l intervalle. Le code affiche ensuite ce nombre maximum de suppositions."""
+
+w,h=[int(i) for i in input().split()]
+print(w if w==h else min(w,h)+1)
+
+"""Ce code prend en entrée deux entiers, w et h, si w et h sont égaux, il imprime simplement w.
+Sinon, il imprime le plus petit des deux nombres, plus un"""
+
+print(1000-(int(input())*2))
+
+"""JCP"""
+
+print(int(input())*int(input())//60)
+"""
+calculer la quantité de sucre consommée par Johny en grammes, étant donné le temps pendant lequel 
+il a mangé du sucre en secondes et la vitesse à laquelle il a mangé le sucre en grammes par minute
+
+quantité de sucre = (temps en secondes * vitesse en grammes par minute) / 60
+La vitesse est donnée en grammes/minute, le temps est en secondes, convertir le temps en minutes en le divisant par 60.
+"""
