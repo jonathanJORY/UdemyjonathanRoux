@@ -108,7 +108,7 @@ print()
 
 
 print("bib",res,"n") # renvoie: bib 5 n
-print("bib"+res+"n") # renvoie: une erreur
+#print("bib"+res+"n")  renvoie: une erreur
 
 print("-"*20) #  renvoie ----------------
 
@@ -129,6 +129,8 @@ ma_fonction()
 ma_fonction()
 # renvoie 6 puis 7
 
+
+# inverser une chaine de caractere:
 nom = "Jean"
 print(nom[::-1])
 
