@@ -60,3 +60,16 @@ il a mangé du sucre en secondes et la vitesse à laquelle il a mangé le sucre 
 quantité de sucre = (temps en secondes * vitesse en grammes par minute) / 60
 La vitesse est donnée en grammes/minute, le temps est en secondes, convertir le temps en minutes en le divisant par 60.
 """
+
+*l,k=open(0).read().split()
+a,b,*l=map(int,l)
+k*=a
+for i,j in zip(l,k):print(end=chr(65+(i-ord(j)+65)%26))
+
+"""
+Répétez le mot-clé jusqu'à ce qu'il atteigne la longueur du message.
+Message : CODINGAME
+Mot-clé : APPLEAPPL
+
+Additionnez le message et le mot-clé lettre par lettre en attribuant des valeurs entières aux lettres de 0 à 25 dans l'ordre alphabétique 
+(c'est-à-dire A=0, B=1, C=2, etc.)."""
